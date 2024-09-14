@@ -17,7 +17,7 @@ Android 애플리케이션 개발을 위한 템플릿 레포지토리.
 
 [.ignore](https://plugins.jetbrains.com/plugin/7495--ignore) 플러그인 사용.
 
-![ignore.png](doc/file/ignore.png)
+![.ignore](doc/file/ignore.png)
 
 - Android
 - Eclipse
