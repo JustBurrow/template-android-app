@@ -28,6 +28,7 @@ include(
     ":app",
     ":viewmodel",
     ":ui",
+    ":ui-state",
     ":model",
     ":domain"
 )

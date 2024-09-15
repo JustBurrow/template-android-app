@@ -10,8 +10,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import kr.lul.template.domain.SampleData
 import kr.lul.template.model.SampleModel
+import kr.lul.template.ui.state.SampleState
 import javax.inject.Inject
 
 @HiltViewModel
@@ -26,8 +26,8 @@ class SecondViewModel @Inject constructor(
     val id: Int = savedStateHandle["id"]
         ?: throw IllegalArgumentException("id is required.")
 
-    private val _data = MutableStateFlow<SampleData?>(null)
-    val data: StateFlow<SampleData?> = _data
+    private val _data = MutableStateFlow<SampleState?>(null)
+    val data: StateFlow<SampleState?> = _data
 
     init {
         Log.d(TAG, "#init called.")
@@ -35,7 +35,9 @@ class SecondViewModel @Inject constructor(
         viewModelScope.launch {
             delay(1000L)
             _data.update {
-                sampleModel.read(id)
+                sampleModel.read(id)?.let {
+                    SampleState(it.id, it.uuid, it.createdAt)
+                }
             }
         }
     }
