@@ -26,7 +26,8 @@ rootProject.name = "Template"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(
     ":app",
-
     ":viewmodel",
-    ":ui"
+    ":ui",
+    ":model",
+    ":domain"
 )

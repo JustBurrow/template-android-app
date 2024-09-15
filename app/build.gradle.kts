@@ -51,6 +51,7 @@ android {
 }
 
 dependencies {
+    implementation(projects.model)
     implementation(projects.ui)
 
     implementation(platform(libs.androidx.compose.bom))

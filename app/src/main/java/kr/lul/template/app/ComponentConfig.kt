@@ -5,6 +5,8 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import kr.lul.template.model.SampleModel
+import kr.lul.template.model.SampleModelImpl
 import javax.inject.Singleton
 
 @Module
@@ -16,9 +18,9 @@ class ComponentConfig {
 
     @Provides
     @Singleton
-    fun provideDummy(): Any {
-        val dummy = Any()
-        Log.d(TAG, "#provideDummy return : $dummy")
-        return dummy
+    fun provideSampleModel(): SampleModel {
+        val model = SampleModelImpl()
+        Log.d(TAG, "#provideSampleModel return : $model")
+        return model
     }
 }

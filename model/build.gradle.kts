@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "kr.lul.template.viewmodel"
+    namespace = "kr.lul.template.model"
     compileSdk = 34
 
     defaultConfig {
@@ -34,10 +34,9 @@ android {
 }
 
 dependencies {
-    implementation(projects.model)
+    api(projects.domain)
 
     implementation(libs.androidx.core)
-    implementation(libs.androidx.lifecycle.viewmodel)
     implementation(libs.hilt)
 
     ksp(libs.hilt.compiler)
