@@ -1,4 +1,4 @@
-package kr.lul.template.ui.theme
+package kr.lul.template.ui.atom
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

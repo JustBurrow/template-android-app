@@ -1,4 +1,4 @@
-package kr.lul.template.ui.theme
+package kr.lul.template.ui.atom
 
 import androidx.compose.ui.graphics.Color
 
