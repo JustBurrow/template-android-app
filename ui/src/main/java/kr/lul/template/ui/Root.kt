@@ -1,9 +1,11 @@
 package kr.lul.template.ui
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import kr.lul.template.ui.atom.TemplateTheme
 import kr.lul.template.ui.page.FirstPage
 import kr.lul.template.ui.page.SecondPage
@@ -20,7 +22,14 @@ fun Root() {
             composable("first") {
                 FirstPage(navController)
             }
-            composable("second") {
+            composable(
+                route = "second/{id}",
+                arguments = listOf(
+                    navArgument("id") {
+                        type = NavType.IntType
+                    }
+                )
+            ) {
                 SecondPage(navController)
             }
         }

@@ -35,6 +35,7 @@ android {
 }
 
 dependencies {
+    implementation(projects.domain)
     implementation(projects.viewmodel)
 
     implementation(platform(libs.androidx.compose.bom))

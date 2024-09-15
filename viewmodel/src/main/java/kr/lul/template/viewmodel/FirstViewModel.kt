@@ -31,4 +31,6 @@ class FirstViewModel @Inject constructor(
             }
         }
     }
+
+    override fun toString() = "FirstViewModel(list=${list.value})"
 }

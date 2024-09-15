@@ -1,12 +1,11 @@
 package kr.lul.template.ui.page
 
 import android.util.Log
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -30,19 +29,28 @@ fun FirstPage(
 
     val list by viewModel.list.collectAsStateWithLifecycle()
 
-    val scrollState = rememberScrollState()
     Column(
         modifier = Modifier
-            .fillMaxSize()
-            .verticalScroll(scrollState),
-        verticalArrangement = Arrangement.Center,
+            .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "First Page", style = MaterialTheme.typography.displayLarge)
+        Text(
+            text = "First Page",
+            modifier = Modifier.padding(0.dp, 32.dp),
+            style = MaterialTheme.typography.displayLarge
+        )
 
-        list.forEach { id ->
-            Button(onClick = { navController.navigate("second/$id") }, modifier = Modifier.padding(8.dp)) {
-                Text(text = "Go to Second Page #$id")
+        LazyColumn(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            items(list) { id ->
+                Button(
+                    onClick = { navController.navigate("second/$id") },
+                    modifier = Modifier.padding(8.dp)
+                ) {
+                    Text(text = "Go to Second Page #$id")
+                }
             }
         }
     }
