@@ -35,6 +35,9 @@ Android 애플리케이션 개발을 위한 템플릿 레포지토리.
 - `.idea`로 통합.
 - `.kotlin` 추가.
 
+### Module Graph
+
 ## 문서
 
 - [Architecture Decision Records](doc/adr/README.md)
+- https://github.com/iurysza/module-graph
