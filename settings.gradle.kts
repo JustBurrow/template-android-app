@@ -23,4 +23,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "Template"
 
-include(":app")
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+include(
+    ":app",
+
+    ":ui"
+)
