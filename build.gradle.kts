@@ -1,4 +1,3 @@
-import dev.iurysouza.modulegraph.LinkText
 import dev.iurysouza.modulegraph.Orientation
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
@@ -16,5 +15,4 @@ moduleGraphConfig {
     readmePath.set("./README.md")
     heading = "### Module Graph"
     orientation.set(Orientation.TOP_TO_BOTTOM)
-    linkText.set(LinkText.CONFIGURATION)
 }
