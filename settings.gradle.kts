@@ -15,7 +15,6 @@ pluginManagement {
 }
 
 val configurations = JsonSlurper().parse(File(rootProject.projectDir, "configuration.json")) as Map<*, *>
-//println("configurations=$configurations")
 
 @Suppress("UnstableApiUsage")
 dependencyResolutionManagement {
