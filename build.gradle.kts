@@ -13,6 +13,8 @@ plugins {
 
 moduleGraphConfig {
     readmePath.set("./README.md")
-    heading = "### Module Graph"
+    heading = "## Module Graph"
+
+    setStyleByModuleType = true
     orientation.set(Orientation.TOP_TO_BOTTOM)
 }
