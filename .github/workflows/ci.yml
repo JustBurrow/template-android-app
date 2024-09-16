@@ -18,6 +18,9 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
       - name: Run Unit Test
+        env:
+          READ_PACKAGES_USER: ${{ github.actor }}
+          READ_PACKAGES_TOKEN: ${{ secrets.READ_PACKAGES_TOKEN }}
         run: ./gradlew clean test
       - name: Generate Document
         env:

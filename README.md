@@ -12,6 +12,8 @@ Android 애플리케이션 개발을 위한 템플릿 레포지토리.
     - `read:packages` 권한을 선택.
 2. [`sample-configuration.json`](sample-configuration.json)를 복사해서 `configuration.json` 파일을 생성.
 3. `configuration.json` 파일의 `READ_PACKAGES`를 실재 토큰으로 교체.
+4. GitHub 레포지토리의 `Repository secrets`에 `READ_PACKAGES_TOKEN`을 추가.
+   ![GitHub - repository - Settings - Secrets and variables - Actions - Repository secrets](doc/file/GitHub%20-%20repository%20-%20Settings%20-%20Secrets%20and%20variables%20-%20Actions%20-%20Repository%20secrets.png)
 
 ## Module Graph
 

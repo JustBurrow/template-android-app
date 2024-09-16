@@ -28,7 +28,7 @@ dependencyResolutionManagement {
             url = uri("https://maven.pkg.github.com/JustBurrow/packages")
             credentials {
                 username = configurations["READ_PACKAGES_USER"] as String?
-                    ?: System.getenv("GITHUB_ACTOR")
+                    ?: System.getenv("READ_PACKAGES_USER")
                 password = configurations["READ_PACKAGES_TOKEN"] as String?
                     ?: System.getenv("READ_PACKAGES_TOKEN")
             }
