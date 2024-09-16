@@ -32,6 +32,8 @@ android {
 }
 
 dependencies {
+    api(libs.kr.lul.semantic.version)
+
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.runtime)
     implementation(libs.androidx.core)

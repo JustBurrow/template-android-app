@@ -32,6 +32,8 @@ android {
 }
 
 dependencies {
+    api(libs.kr.lul.semantic.version)
+
     implementation(libs.androidx.core)
 
     testImplementation(libs.junit)
