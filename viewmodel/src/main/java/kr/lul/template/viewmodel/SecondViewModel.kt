@@ -36,7 +36,7 @@ class SecondViewModel @Inject constructor(
             delay(1000L)
             _data.update {
                 sampleModel.read(id)?.let {
-                    SampleState(it.id, it.uuid, it.createdAt)
+                    SampleState(it.id, it.uuid, it.version, it.createdAt)
                 }
             }
         }

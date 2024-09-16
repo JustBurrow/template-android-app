@@ -1,3 +1,5 @@
+import groovy.json.JsonSlurper
+
 pluginManagement {
     repositories {
         google {
@@ -12,12 +14,25 @@ pluginManagement {
     }
 }
 
+val configurations = JsonSlurper().parse(File(rootProject.projectDir, "configuration.json")) as Map<*, *>
+//println("configurations=$configurations")
+
 @Suppress("UnstableApiUsage")
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/JustBurrow/packages")
+            credentials {
+                username = configurations["READ_PACKAGES_USER"] as String?
+                    ?: System.getenv("GITHUB_ACTOR")
+                password = configurations["READ_PACKAGES_TOKEN"] as String?
+                    ?: System.getenv("READ_PACKAGES_TOKEN")
+            }
+        }
     }
 }
 
