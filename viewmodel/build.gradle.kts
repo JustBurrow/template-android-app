@@ -34,7 +34,7 @@ android {
 }
 
 dependencies {
-    api(projects.uiState)
+    api(projects.state)
 
     implementation(projects.model)
 
