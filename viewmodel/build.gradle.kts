@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "kr.lul.template.viewmodel"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 29
@@ -34,14 +34,9 @@ android {
 }
 
 dependencies {
-    api(projects.uiState)
+    api(projects.state)
 
     implementation(projects.model)
-
-    // module graph 시작.
-    implementation(projects.domain) // model
-    // module graph 끝.
-
     implementation(libs.androidx.core)
     implementation(libs.androidx.lifecycle.viewmodel)
     implementation(libs.hilt)

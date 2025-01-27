@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace = "kr.lul.template.ui"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 29
@@ -35,11 +35,7 @@ android {
 }
 
 dependencies {
-    implementation(projects.viewmodel)
-
-    // module graph 시작.
-    implementation(projects.uiState) // viewmodel
-    // module graph 끝.
+    api(projects.state)
 
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.core)

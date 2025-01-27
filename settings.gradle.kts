@@ -42,7 +42,7 @@ include(
     ":app",
     ":viewmodel",
     ":ui",
-    ":ui-state",
+    ":state",
     ":model",
     ":domain"
 )

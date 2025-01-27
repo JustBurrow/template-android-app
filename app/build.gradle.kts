@@ -8,12 +8,12 @@ plugins {
 
 android {
     namespace = "kr.lul.template"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "kr.lul.template"
         minSdk = 29
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "0.0.1"
 
@@ -53,12 +53,14 @@ android {
 dependencies {
     implementation(projects.model)
     implementation(projects.ui)
+    implementation(projects.viewmodel)
 
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.core)
+    implementation(libs.androidx.navigation.compose)
     implementation(libs.hilt)
-    implementation(libs.androidx.lifecycle.runtime)
+    implementation(libs.hilt.navigation.compose)
 
     ksp(libs.hilt.compiler)
 

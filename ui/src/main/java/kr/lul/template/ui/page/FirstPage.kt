@@ -10,24 +10,16 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
-import kr.lul.template.viewmodel.FirstViewModel
 
 @Composable
 fun FirstPage(
-    navController: NavController = rememberNavController(),
-    viewModel: FirstViewModel = hiltViewModel()
+    list: List<Int>,
+    onClick: (Int) -> Unit = { }
 ) {
-    Log.v(TAG, "#FirstPage args : navController=$navController, viewModel=$viewModel")
-
-    val list by viewModel.list.collectAsStateWithLifecycle()
+    Log.v(TAG, "#FirstPage args : list=$list, onClick=$onClick")
 
     Column(
         modifier = Modifier
@@ -46,7 +38,7 @@ fun FirstPage(
         ) {
             items(list) { id ->
                 Button(
-                    onClick = { navController.navigate("second/$id") },
+                    onClick = { onClick(id) },
                     modifier = Modifier.padding(8.dp)
                 ) {
                     Text(text = "Go to Second Page #$id")

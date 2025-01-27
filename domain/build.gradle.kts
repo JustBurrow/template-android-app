@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "kr.lul.template.domain"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 29

@@ -1,4 +1,4 @@
-package kr.lul.template.ui
+package kr.lul.template.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavType
@@ -7,20 +7,17 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import kr.lul.template.ui.atom.TemplateTheme
-import kr.lul.template.ui.page.FirstPage
-import kr.lul.template.ui.page.SecondPage
-import kr.lul.template.ui.page.SplashPage
 
 @Composable
-fun Root() {
+fun NavigationGraph() {
     TemplateTheme {
         val navController = rememberNavController()
         NavHost(navController = navController, startDestination = "splash") {
             composable("splash") {
-                SplashPage(navController)
+                NavSplashPage(navController)
             }
             composable("first") {
-                FirstPage(navController)
+                NavFirstPage(navController)
             }
             composable(
                 route = "second/{id}",
@@ -30,7 +27,7 @@ fun Root() {
                     }
                 )
             ) {
-                SecondPage(navController)
+                NavSecondPage(navController)
             }
         }
     }

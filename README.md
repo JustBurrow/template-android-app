@@ -27,23 +27,22 @@ Android 애플리케이션 개발을 위한 템플릿 레포지토리.
 }%%
 
 graph TB
-  :ui --> :viewmodel
-  :ui --> :ui-state
+  :ui --> :state
   :model --> :domain
   :app --> :model
   :app --> :ui
-  :viewmodel --> :ui-state
+  :app --> :viewmodel
+  :viewmodel --> :state
   :viewmodel --> :model
-  :viewmodel --> :domain
 
 classDef android-library fill:#3BD482,stroke:#fff,stroke-width:2px,color:#fff;
 classDef android-application fill:#2C4162,stroke:#fff,stroke-width:2px,color:#fff;
 class :ui android-library
-class :viewmodel android-library
-class :ui-state android-library
+class :state android-library
 class :model android-library
 class :domain android-library
 class :app android-application
+class :viewmodel android-library
 
 ```
 ## 문서

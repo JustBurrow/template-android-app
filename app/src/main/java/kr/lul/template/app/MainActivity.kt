@@ -6,7 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import dagger.hilt.android.AndroidEntryPoint
-import kr.lul.template.ui.Root
+import kr.lul.template.navigation.NavigationGraph
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
 
         enableEdgeToEdge()
         setContent {
-            Root()
+            NavigationGraph()
         }
     }
 }
