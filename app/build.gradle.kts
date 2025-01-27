@@ -53,12 +53,14 @@ android {
 dependencies {
     implementation(projects.model)
     implementation(projects.ui)
+    implementation(projects.viewmodel)
 
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.core)
+    implementation(libs.androidx.navigation.compose)
     implementation(libs.hilt)
-    implementation(libs.androidx.lifecycle.runtime)
+    implementation(libs.hilt.navigation.compose)
 
     ksp(libs.hilt.compiler)
 

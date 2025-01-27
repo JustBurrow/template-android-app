@@ -9,24 +9,17 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
-import kr.lul.template.viewmodel.SecondViewModel
+import kr.lul.template.ui.state.SampleState
 
 @Composable
 fun SecondPage(
-    navController: NavController = rememberNavController(),
-    viewModel: SecondViewModel = hiltViewModel()
+    data: SampleState?,
+    onClickBack: () -> Unit = { }
 ) {
-    Log.v(TAG, "#SecondPage args : navController=$navController, viewModel=$viewModel")
-
-    val data by viewModel.data.collectAsStateWithLifecycle()
+    Log.v(TAG, "#SecondPage args : data=$data, onClickBack=$onClickBack")
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -41,7 +34,7 @@ fun SecondPage(
             Text(text = "$data", Modifier.padding(16.dp))
         }
 
-        Button(onClick = { navController.popBackStack() }) {
+        Button(onClick = onClickBack) {
             Text(text = "Go back")
         }
     }

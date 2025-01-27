@@ -35,11 +35,7 @@ android {
 }
 
 dependencies {
-    implementation(projects.viewmodel)
-
-    // module graph 시작.
-    implementation(projects.state) // viewmodel
-    // module graph 끝.
+    api(projects.state)
 
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.core)

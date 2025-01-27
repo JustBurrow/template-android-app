@@ -37,11 +37,6 @@ dependencies {
     api(projects.state)
 
     implementation(projects.model)
-
-    // module graph 시작.
-    implementation(projects.domain) // model
-    // module graph 끝.
-
     implementation(libs.androidx.core)
     implementation(libs.androidx.lifecycle.viewmodel)
     implementation(libs.hilt)
