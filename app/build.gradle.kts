@@ -8,12 +8,12 @@ plugins {
 
 android {
     namespace = "kr.lul.template"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "kr.lul.template"
         minSdk = 29
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "0.0.1"
 

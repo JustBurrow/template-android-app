@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "kr.lul.template.viewmodel"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 29
